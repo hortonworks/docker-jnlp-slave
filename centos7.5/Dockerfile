@@ -8,6 +8,8 @@ RUN curl --create-dirs -fsSLo /usr/share/jenkins/slave.jar https://repo.jenkins-
   && chmod 755 /usr/share/jenkins \
   && chmod 644 /usr/share/jenkins/slave.jar
 
+COPY pip.conf /grid/0/jenkins/.pip/pip.conf
+
 USER jenkins
 
 ENV AGENT_WORKDIR=${AGENT_WORKDIR}
